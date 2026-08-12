@@ -201,6 +201,13 @@ dein — bas, real payments chalna shuru ho jaayenge.
 - **Quiz questions / recommendation logic:** `public/js/quiz.js`.
 - **Contact info / address / social links:** `public/index.html` footer section.
 - **Colors / fonts:** `public/css/style.css` ke top `:root` variables.
+- **Hero banner photo (Janhavi ma'am ki image):** `public/index.html` me
+  `.hero-photo-frame` block — bas `<img src="...">` ka URL badal dijiye.
+- **Support Chatboard Q&A (login/account questions):** `public/js/chatbot.js`
+  ke top me `CHAT_FAQ` array — har entry `{ q, keywords, a }` format me hai.
+  Bas naya object add kar dijiye, koi aur JS change karne ki zaroorat nahi.
+  Filhal 5 starter login-related Q&A already daal diye hain, taaki chat
+  abhi se live/kaam karta rahe — aap jitne chahein add kar sakte hain.
 
 ## Already-done SEO checklist
 - Unique title/meta description, Open Graph tags
