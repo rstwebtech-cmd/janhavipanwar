@@ -345,6 +345,7 @@ h1,h2,h3,h4{font-family:var(--font-head);font-weight:700;line-height:1.18;letter
 .chat-msg{max-width:84%;padding:10px 14px;border-radius:14px;font-size:13.5px;line-height:1.45;animation:msgIn .25s ease both;}
 .chat-msg.bot{background:#fff;border:1px solid var(--line);align-self:flex-start;border-bottom-left-radius:4px;}
 .chat-msg.user{background:var(--maroon);color:#fff;align-self:flex-end;border-bottom-right-radius:4px;}
+.chat-msg.bot a{color:var(--maroon);font-weight:700;text-decoration:underline;display:inline-block;margin-top:6px;}
 @keyframes msgIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
 .chat-quick{display:flex;flex-wrap:wrap;gap:8px;padding:0 16px 12px;background:var(--cream);flex-shrink:0;}
 .chat-quick button{font-size:12px;padding:8px 12px;border-radius:100px;border:1px solid var(--line);background:#fff;color:var(--ink);transition:.15s;}

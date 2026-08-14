@@ -23,7 +23,8 @@
     {
       q: "I forgot my password",
       keywords: ["forgot password", "reset password", "password", "change password"],
-      a: "On the janhavipanwar.com sign-in page, click 'Forgot Password' and follow the link sent to your registered email to set a new password."
+      a: 'Click the link below and follow the steps to reset your password — a reset link will be sent to your registered email.<br><a href="https://janhavipanwar.com/forgot-password" target="_blank" rel="noopener">🔑 Reset my password →</a>',
+      html: true
     },
     {
       q: "Which email should I use to login?",
@@ -39,6 +40,12 @@
       q: "Do I need to create a new account?",
       keywords: ["new account", "register", "sign up", "signup", "create account"],
       a: "Only if you don't already have one on janhavipanwar.com. Register there using the same email you used at checkout — your purchased course will appear in your account."
+    },
+    {
+      q: "How does my course open after I buy it?",
+      keywords: ["course structure", "how to open course", "how does course open", "course kaise", "where is my course", "how to access course", "course modules", "how course works"],
+      a: "After payment, sign in at janhavipanwar.com with your checkout email. Your dashboard shows your purchased course split into modules/lessons — click any module to expand it, then click a lesson to start watching. Lessons unlock in order, and a ✓ mark appears once you finish one.",
+      html: false
     }
   ];
 
@@ -56,10 +63,14 @@
 
   let greeted = false;
 
-  function addMessage(text, from){
+  function addMessage(text, from, isHTML){
     const div = document.createElement("div");
     div.className = `chat-msg ${from}`;
-    div.textContent = text;
+    if(isHTML){
+      div.innerHTML = text;
+    } else {
+      div.textContent = text;
+    }
     bodyEl.appendChild(div);
     bodyEl.scrollTop = bodyEl.scrollHeight;
   }
@@ -97,7 +108,7 @@
     showTyping(() => {
       const match = findAnswer(text);
       if(match){
-        addMessage(match.a, "bot");
+        addMessage(match.a, "bot", !!match.html);
       } else {
         addMessage(
           "I don't have an answer for that yet — tap below to ask our team directly on WhatsApp and we'll help you out.",
